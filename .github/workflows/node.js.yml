@@ -3,6 +3,8 @@
 
 name: Node.js CI
 
+# Run this workflow of actions on push (commit) and pull requests. 
+# Running just on master to save time, e.g., if committing to a sub-branch or creating a pr on a sub-branch
 on:
   push:
     branches: [ master ]
