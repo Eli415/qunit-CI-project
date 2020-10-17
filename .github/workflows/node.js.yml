@@ -12,20 +12,22 @@ on:
   pull_request:
     branches: [ master ]
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
-
-# Ubuntu is a linux-bases OS (a.k.a. "distribution"). Open-souce, secure, flexible due to linux.
+  # Set and name the job key.
+  CI-Testing-Project:
+    
+    # The type of machine / runner that the job will run on
+    # Note: Ubuntu is a linux-bases OS / distribution. Open-souce, secure, flexible due to linux.
     runs-on: ubuntu-latest
 
-# Node versions are the versions of node.js to run tests on. A given org will test accroding to what they support.
+    # Versions of node.js to run tests on.
     strategy:
       matrix:
         node-version: [10.x, 12.x, 14.x]
 
-# A Workflow contains at least one Job
-# A Job is a set of Step(s) on a single Runner (by default). Steps share data.
-# Note: Job name shows up in Details
+    # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    # Steps will be executed as part of the job and share data
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -34,3 +36,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn
     - run: yarn test
+
+    # Check location of json file
+    - name: Location of json file
+      run: echo “$GITHUB_EVENT_PATH”
