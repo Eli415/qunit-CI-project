@@ -34,6 +34,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    # yarn is a package manager for node.js. It manages dependencies and and uses package.json as a manifest
     - run: yarn
     - run: yarn test
 
