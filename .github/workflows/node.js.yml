@@ -26,17 +26,22 @@ jobs:
       matrix:
         node-version: [10.x, 12.x, 14.x]
 
-    # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-    # Steps will be executed as part of the job and share data
+    # Steps will be executed as part of a job and share data. (A workflow is comprised of one of more jobs)
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    # yarn is a package manager for node.js. It manages dependencies and and uses package.json as a manifest
-    - run: yarn
-    - run: yarn test
+   
+    # Run yarn
+    # Yarn is a package manager for node.js. It manages dependencies and and uses package.json as a manifest
+    - name: Run yarn package manager
+      run: yarn
+    
+    # Run node script called 'test'. Also runs via yarn.
+    - name: Run node script 'test'
+      run: yarn test
 
     # Check location of json file
     - name: Location of json file
