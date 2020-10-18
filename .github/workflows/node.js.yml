@@ -38,11 +38,11 @@ jobs:
     # Run yarn
     # Yarn is a package manager for node.js. It manages dependencies and and uses package.json as a manifest
     - name: Run yarn application manager
-    - run: yarn
+      run: yarn
     
     # Run node script called 'test'. (Also run via yarn)
     - name: Run node script 'test'
-    - run: yarn test
+      run: yarn test
 
     # Check location of json file
     - name: Location of json file
