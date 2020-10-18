@@ -1,3 +1,5 @@
+//// Set constant variables
+// Include the calculator.js file, which contains functions and exports their returns / results
 const { sum, difference, quotient, product } = require("../calculator");
 
 //// TESTS FOR SUM
