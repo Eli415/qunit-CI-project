@@ -26,8 +26,7 @@ jobs:
       matrix:
         node-version: [10.x, 12.x, 14.x]
 
-    # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-    # Steps will be executed as part of the job and share data
+    # Steps will be executed as part of a job and share data. (A workflow is comprised of one of more jobs)
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
