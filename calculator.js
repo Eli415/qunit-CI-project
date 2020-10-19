@@ -15,7 +15,7 @@ function quotient(a, b) {
 
 // Summary / Detail
 // Function to call later will be like: createSummaryDetailsSection("My summary content", "My details content")
-function createSummaryDetailsSection("summary", "details"){
+function createSummaryDetailsSection(summary, details){
     return "<details><summary>" + summary "</summary>" + details + "</details>";
 
 // Make the following things (i.e., { sum, subtract } ) 
