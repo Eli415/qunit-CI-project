@@ -4,17 +4,17 @@ const { sum, difference, quotient, product, summaryDetail } = require("../calcul
 
 //// These tests use Quinit and its modules to verify certain conditions then print details about passing / failing
 
-//// TO DO: TESTS THAT SHOW MARKDOWN
-//summaryDetail("My summary content"); //"My summary content", "My details content"
-QUnit.module('Test that fails and writes markdown');
-QUnit.test(summaryDetail('Test that fails and writes markdown'), assert => {
+//// TESTS THAT SHOW MARKDOWN
+// TO DO: call something like summaryDetail("My summary content"); //"My summary content", "My details content"
+QUnit.module('Test that writes markdown');
+QUnit.test('Test that fails and writes markdown', assert => {
    // this is where we write our test 
-   assert.equal(sum(2, 4), 7, 'FAILED. Markdown here.'); // this should fail and write out the appropriate markdown string
+   assert.equal(sum(2, 4), 7, 'FAILED. Markdown here. e.g.,' + summaryDetail); // this should fail and write out the appropriate markdown string
 })
 
 //// TESTS FOR SUM
 QUnit.module('Tests for sum');
-QUnit.test(summaryDetail('Sum with two positive numbers'), assert => {
+QUnit.test('Sum with two positive numbers', assert => {
    // this is where we write our test 
    assert.equal(sum(3, 4), 7, 'make sure 3 + 4 = 7');
    assert.equal(sum(2, 1), 3, 'make sure 2 + 1 = 3');
