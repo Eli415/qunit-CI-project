@@ -3,13 +3,13 @@
 const { sum, difference, quotient, product, summaryDetail } = require("../calculator");
 
 //// TO DO: TESTS THAT SHOW MARKDOWN
-summaryDetail("My Summary Content");
+//summaryDetail("My Summary Content");
 
 //// TESTS FOR SUM
 QUnit.module('tests for sum');
 QUnit.test('sum with two positive numbers', assert => {
    // this is where we write our test 
-   assert.equal(sum(3, 4), 7, 'make sure 3 + 4 = 7');
+   assert.equal(sum(3, 4), 7, summaryDetail("make sure 3 + 4 = 7"));
    assert.equal(sum(2, 1), 3, 'make sure 2 + 1 = 3');
 })
 QUnit.test('sum with a negative and positive number', assert => {
