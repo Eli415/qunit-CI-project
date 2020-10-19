@@ -7,9 +7,10 @@ const { sum, difference, quotient, product, summaryDetail } = require("../calcul
 //// TESTS THAT SHOW MARKDOWN
 // TO DO: call something like summaryDetail("My summary content"); //"My summary content", "My details content"
 QUnit.module('Test that writes markdown');
-QUnit.test('Test that fails and writes markdown', assert => {
-   // this is where we write our test 
-   assert.equal(sum(2, 4), 7, 'FAILED. Markdown here. e.g.,' + summaryDetail); // this should fail and write out the appropriate markdown string
+QUnit.test('Test that writes markdown on fail', assert => {
+   // this is where we write our test
+   // this should fail and print the appropriate markdown string from the summaryDetail function
+   assert.equal(sum(2, 4), 7, 'FAILED. Markdown goes here. e.g.,' + summaryDetail('My summary content')); 
 })
 
 //// TESTS FOR SUM
