@@ -14,8 +14,8 @@ function quotient(a, b) {
 // Markdown functions
 // Summary / Detail
 function summaryDetail(a) {
-    //return "<details><summary>" + a; 
-    echo "<details><summary>" + a;
+    return "<details><summary>" + a; 
+    //echo "<details><summary>" + a;
 }
 
 // Summary / Detail - Function to call later will be like: createSummaryDetailsSection("My summary content", "My details content")
