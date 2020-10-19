@@ -3,7 +3,7 @@
 const { sum, difference, quotient, product, summaryDetail } = require("../calculator");
 
 //// TO DO: TESTS THAT SHOW MARKDOWN
-echo summaryDetail("My Summary Content");
+summaryDetail("My Summary Content");
 
 //// TESTS FOR SUM
 QUnit.module('tests for sum');
