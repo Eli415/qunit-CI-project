@@ -25,6 +25,5 @@ module.exports = {
     difference,
     product,
     quotient,
-    summary,
-    details
+    createSummaryDetailsSection
 }; 
