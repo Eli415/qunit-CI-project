@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "scripts": {"test": "qunit"},
+  "scripts": {"test": "qunit" , "eli" :"echo 'hello. Eli'"},
   "devDependencies": {
     "qunit": "^2.11.2"
   }

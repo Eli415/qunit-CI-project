@@ -1,6 +1,6 @@
 //// Set constant variables
 // Include the calculator.js file, which contains functions and exports their returns / results
-const { sum, difference, quotient, product, summaryDetail } = require("../calculator");
+const { sum, difference, quotient, product, summaryDetail } = require("../markdown");
 
 //// These tests use Quinit and its modules to verify certain conditions then print details about passing / failing
 
@@ -10,7 +10,7 @@ QUnit.module('Test that writes markdown');
 QUnit.test('Test that writes markdown on fail', assert => {
    // this is where we write our test
    // this should fail and print the appropriate markdown string from the summaryDetail function
-   assert.equal(sum(2, 4), 7, 'FAILED. Markdown goes here. e.g.,' + summaryDetail('My summary content')); 
+   assert.equal(summaryDetail('Eli', 'Mike'), "<details><summary>Eli</summary>Mike</details>"); 
 })
 
 //// TESTS FOR SUM
