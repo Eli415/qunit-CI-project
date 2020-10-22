@@ -11,7 +11,7 @@ QUnit.module('Markdown test(s)');
    QUnit.test('Summary / Detail Panel', assert => {
       // write our test & print markdown string
       assert.equal(summaryDetail('My Summary Content2', 'My Details Content2'), 
-      "<details><summary>My Summary Content</summary>My Details Content</details>", 
+      "<details><summary>My Summary Content2</summary>My Details Content2</details>", 
       'Make sure your Summary Content and Summary Details match expected output.'
       );
    })
