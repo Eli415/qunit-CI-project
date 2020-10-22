@@ -1,14 +1,26 @@
 //// Set constant variables
 // Include the calculator.js file, which contains functions and exports their returns / results
-const { sum, difference, quotient, product } = require("../calculator");
+const { sum, difference, quotient, product, summaryDetail } = require("../markdown");
+
+//// These tests use Quinit and its modules to verify certain conditions then print details about passing / failing
+
+//// TESTS THAT PRINT MARKDOWN (In GitHub Details Page)
+QUnit.module('Test that writes markdown');
+QUnit.test('Test that writes markdown on fail', assert => {
+   // this is where we write our test
+   // print markdown string from the summaryDetail function
+   assert.equal(summaryDetail('My Summary Content', 'My Details Content'), "<details><summary>My Summary Content</summary>My Details Content</details>", 'Make sure your Summary Content and Summary Details match expected output.');
+})
 
 //// TESTS FOR SUM
-QUnit.module('tests for sum');
-QUnit.test('sum with two positive numbers', assert => {
+QUnit.module('Tests for sum');
+QUnit.test('Sum with two positive numbers', assert => {
    // this is where we write our test 
    assert.equal(sum(3, 4), 7, 'make sure 3 + 4 = 7');
    assert.equal(sum(2, 1), 3, 'make sure 2 + 1 = 3');
 })
+
+/* 
 QUnit.test('sum with a negative and positive number', assert => {
    // this is where we write our test 
    assert.equal(sum(-3, 4), 1, 'make sure -3 + 4 = 1');
@@ -21,7 +33,7 @@ QUnit.test('sum with two negative numbers', assert => {
 })
 
 //// TESTS FOR DIFFERENCE
-QUnit.module('tests for difference');
+QUnit.module('Tests for difference');
 QUnit.test('difference with two positive numbers', assert => {
     // this is where we write our test 
     assert.equal(difference(4, 4), 0, 'make sure 4 - 4 = 0');
@@ -30,7 +42,7 @@ QUnit.test('difference with two positive numbers', assert => {
  })
 
 //// TESTS FOR PRODUCT
-QUnit.module('tests for product');
+QUnit.module('Tests for product');
 QUnit.test('product with two positive numbers', assert => {
     // this is where we write our test 
     assert.equal(product(4, 4), 16, 'make sure 4 * 4 = 16');
@@ -39,11 +51,11 @@ QUnit.test('product with two positive numbers', assert => {
  })
  
 //// TESTS FOR QUOTIENT
-QUnit.module('tests for quotient');
+QUnit.module('Tests for quotient');
  QUnit.test('quotient with two positive numbers', assert => {
     // this is where we write our test 
     assert.equal(quotient(4, 4), 1, 'make sure 4/4 = 1');
     assert.equal(quotient(12, 3), 4, 'make sure 12/3 = 4');
     assert.equal(quotient(12, 0), Infinity, 'make sure dividing by zero is "not a number"');
  })
- 
+ */
