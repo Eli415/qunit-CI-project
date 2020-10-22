@@ -13,15 +13,9 @@ function quotient(a, b) {
 
 // Markdown functions
 // Summary / Detail
-// TO DO: set up to take 2 args
 function summaryDetail(a, b) {
     return "<details><summary>" + a + "</summary>" + b + "</details>";
 }
-
-// Summary / Detail - Function to call later will be like: createSummaryDetailsSection("My summary content", "My details content")
-//function createSummaryDetailsSection(summary, details){
-//    return "<details><summary>" + summary "</summary>" + details + "</details>";
-//}
 
 // Make the following things (i.e., { sum, subtract } ) 
 // available to the outside world

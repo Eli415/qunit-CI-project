@@ -4,13 +4,12 @@ const { sum, difference, quotient, product, summaryDetail } = require("../markdo
 
 //// These tests use Quinit and its modules to verify certain conditions then print details about passing / failing
 
-//// TESTS THAT SHOW MARKDOWN
-// TO DO: call something like summaryDetail("My summary content"); //"My summary content", "My details content"
+//// TESTS THAT PRINT MARKDOWN (In GitHub Details Page)
 QUnit.module('Test that writes markdown');
 QUnit.test('Test that writes markdown on fail', assert => {
    // this is where we write our test
-   // this should fail and print the appropriate markdown string from the summaryDetail function
-   assert.equal(summaryDetail('Eli', 'Mike'), "<details><summary>Eli</summary>Mike</details>"); 
+   // print appropriate markdown string from the summaryDetail function
+   assert.equal(summaryDetail('My Summary Content', 'My Details Content'), "<details><summary>Eli</summary>Mike</details>");
 })
 
 //// TESTS FOR SUM
