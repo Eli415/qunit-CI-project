@@ -42,7 +42,7 @@ function descriptionList([
 
 //var theList = []; // Create new array object
  function descriptionList() {
-    var str = ''; // Create string to hold parts of the array and shape into markdown
+    var str = '<dl>'; // Create string to hold parts of the array and shape into markdown
     var items = { // Create (psuedo)associative array
         "images" : ".jpg, .gif, .png",
         "styles" : ".css", // index / name : value / element
@@ -50,8 +50,9 @@ function descriptionList([
         "documents" : ".html"
       }
       for(var index in items) {
-        str += index + " : " + items[index] + "</dl>";
+        str += "<dt>" + index + "</dt><dd>" + items[index] + "</dd>";
       }
+      str += "</dl>";
       return str;
  };
 
