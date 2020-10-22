@@ -8,8 +8,8 @@ const { sum, difference, quotient, product, summaryDetail } = require("../markdo
 QUnit.module('Test that writes markdown');
 QUnit.test('Test that writes markdown on fail', assert => {
    // this is where we write our test
-   // print appropriate markdown string from the summaryDetail function
-   assert.equal(summaryDetail('My Summary Content', 'My Details Content'), "<details><summary>Eli</summary>Mike</details>");
+   // print markdown string from the summaryDetail function
+   assert.equal(summaryDetail('My Summary Content', 'My Details Content'), "<details><summary>My Summary Content</summary>My Details Content</details>", 'Make sure your Summary Content and Summary Details match expected output.');
 })
 
 //// TESTS FOR SUM
@@ -20,7 +20,8 @@ QUnit.test('Sum with two positive numbers', assert => {
    assert.equal(sum(2, 1), 3, 'make sure 2 + 1 = 3');
 })
 
-/* QUnit.test('sum with a negative and positive number', assert => {
+/* 
+QUnit.test('sum with a negative and positive number', assert => {
    // this is where we write our test 
    assert.equal(sum(-3, 4), 1, 'make sure -3 + 4 = 1');
    assert.equal(sum(2, -1), 1, 'make sure 2 + (-1) = 1');
@@ -30,7 +31,6 @@ QUnit.test('sum with two negative numbers', assert => {
    assert.equal(sum(-3, -4), -7, 'make sure -3 + (-4) = -7');
    assert.equal(sum(-2, -1), -3, 'make sure -2 + (-1) = -3');
 })
-*/
 
 //// TESTS FOR DIFFERENCE
 QUnit.module('Tests for difference');
@@ -58,4 +58,4 @@ QUnit.module('Tests for quotient');
     assert.equal(quotient(12, 3), 4, 'make sure 12/3 = 4');
     assert.equal(quotient(12, 0), Infinity, 'make sure dividing by zero is "not a number"');
  })
- 
+ */

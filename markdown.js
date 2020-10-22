@@ -16,6 +16,10 @@ function quotient(a, b) {
 function summaryDetail(a, b) {
     return "<details><summary>" + a + "</summary>" + b + "</details>";
 }
+// Summary / Detail
+function summaryDetail(a, b) {
+    return "<details><summary>" + a + "</summary>" + b + "</details>";
+}
 
 // Make the following things (i.e., { sum, subtract } ) 
 // available to the outside world
