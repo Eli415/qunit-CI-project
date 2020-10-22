@@ -42,19 +42,18 @@ function descriptionList([
 
 //var theList = []; // Create new array object
  function descriptionList() {
-    var items = {
+    var str = ''; // Create string to hold parts of the array and shape into markdown
+    var items = { // Create (psuedo)associative array
         "images" : ".jpg, .gif, .png",
-        "bar" : 789012,
-        "baz" : 345678,
-        "bat" : 901234
+        "styles" : ".css", // index / name : value / element
+        "scripts" : ".js",
+        "documents" : ".html"
       }
-      var str = '';
       for(var index in items) {
-        return( index + " : " + items[index] + "<br />");
+        str += index + " : " + items[index] + "</dl>";
       }
+      return str;
  };
-
-
 
 // Make the following things (i.e., { sum, subtract } ) 
 // available to the outside world

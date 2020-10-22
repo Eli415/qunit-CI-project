@@ -8,7 +8,10 @@ const { sum, difference, quotient, product, summaryDetail, descriptionList } = r
 QUnit.module('Test that writes markdown');
 QUnit.test('Test markdown for Summary Detail', assert => {
    // write our test & print markdown string
-   assert.equal(summaryDetail('My Summary Content', 'My Details Content'), "<details><summary>My Summary Content</summary>My Details Content</details>", 'Make sure your Summary Content and Summary Details match expected output.');
+   assert.equal(summaryDetail('My Summary Content', 'My Details Content'), 
+   "<details><summary>My Summary Content</summary>My Details Content</details>", 
+   'Make sure your Summary Content and Summary Details match expected output.'
+   );
 })
 QUnit.test('Test markdown for Summary Detail', assert => {
    // write our test & print markdown string
