@@ -18,29 +18,6 @@ function summaryDetail(a, b) {
 }
 
 // Description List
-
-/*
-function descriptionList([
-    {
-        title: "Images", 
-        description: ".jpg, .gif, .png"
-    },
-    {
-        title: "Styles", 
-        description: ".css"
-    },
-    {
-        title: "Scripts", 
-        description: ".js"
-    },
-    {
-        title: "Documents", 
-        description: ".html"
-    }
-  ]);
-*/
-
-//var theList = []; // Create new array object
  function descriptionList() {
     var str = '<dl>'; // Create string to hold parts of the array and shape into markdown
     var items = { // Create (psuedo)associative array
