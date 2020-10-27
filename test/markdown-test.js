@@ -18,12 +18,33 @@ QUnit.module('Markdown test(s)');
 
    QUnit.test('Description List', assert => {
       // write our test & print markdown string
-      assert.equal(descriptionList(),
-      "<dl><dt>images</dt><dd>.jpg, .gif, .png</dd><dt>styles</dt><dd>.css</dd><dt>scripts</dt><dd>.js</dd><dt>documents</dt><dd>.html</dd></dl>", 
+      assert.equal(descriptionList([
+         {title: "Images", description: ".jpg, .gif, .png"},
+         {title: "Styles", description: ".css"},
+         {title: "Documents", description: ".html"}
+       ]),
+      "<dl><dt>Images</dt><dd>.jpg, .gif, .png</dd><dt>Styles</dt><dd>.css</dd><dt>Documents</dt><dd>.html</dd></dl>", 
       'Make sure your Description List array is working as expected.'
       );
    })
 
+   QUnit.test('Description List (0 Items!)', assert => {
+      // write our test & print markdown string
+      assert.equal(descriptionList([
+       ]),
+      "<dl></dl>", // this or null
+      'Zero items.'
+      );
+   })
+
+   ThreeColumnTable(["Item", "Price", "Qty"], [
+      ["🍇 Grapes", "$2.99", 3],
+      ["🍐 Pears", "$4.15", 1],
+      ["🍋 Lemons", "$0.99", 2],
+      ["🍍 Pineapples | " , "$4.89 | " , 6]
+    ]);
+
+   /*
    QUnit.test('3 Column Table', assert => {
       // write our test & print markdown string
       assert.equal(ThreeColumnTable('My Item', 'My Price', 'My Quantity'),
@@ -31,3 +52,4 @@ QUnit.module('Markdown test(s)');
       'Make sure your 3 Column Table data: Item, Price and Quantity match expected output.'
       );
    })
+   */
