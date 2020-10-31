@@ -36,22 +36,53 @@ function summaryDetail(a, b) {
         4. mismatch in headers v. rows (what if someone added a header or not enough cols / items)
  */
 
-function ThreeColumnTable(items, prices, quantitites) {
+
+function ThreeColumnTable( allTheThings ) { // function takes an array that contains 3 arrays. It's all set up and called from markdown-test.js
+    var str2 = '| Item Name | Price | Quantity |'; // TO DO: set up as variables / an array, as well
+    str2 += '|---|---|---|'; 
+    
+    // for each allTheThings array
+
+    // Version A
+    /*
+    for (var i = 0; i < allTheThings.length; i++) { // loop through parent array (3 items)
+        var allTheThings = allTheThings = allTheThings[i]; // TO DO
+​
+        console.log(`allTheThings ${i}`);
+​
+            for (let j = 0; j < allTheThings.length; j++) { // loop through each array (inside parent array)
+                console.log(`item ${allTheThings[j]}`);
+            }
+​
+        }
+    */
+
+    // Version B
+    /*
+    allTheThings.forEach(function(allTheThings, i) { // loop through parent array
+        allTheThings.forEach(function(names, j) {
+            console.log(`allTheThings:${i} - ${names}`);
+        })
+    });
+    */
+      return str2; //return allTheThings data;
+ };
+
+
+// 10/27
+/*
+ function ThreeColumnTable(items, prices, qty) { // function takes 3 arrays. These are set up in markdown-test.js
     var str2 = '| Item | Price | Quantity |';
     str2 += '|---|---|---|'; 
-    /*var items = [ // Create array. This is an array literal
-        ["🍇 Grapes | " , "$2.99 | " , 3],
-        ["🍐 Pears | " , "$4.15 | " , 1],
-        ["🍋 Lemons | " , "$0.99 | " , 2]
-    ]*/
       var i;
       for (i = 0; i < items.length; i++) { // loop through inner / nested array for values  
         // add to string
-        str2 += items[[i]] + " |"; // + "<br>" or \n
+        str2 += items[[i]] + " |";
     }
       //return items[[1]];
       return str2;
  };
+ */
 
  /*
 function ThreeColumnTable(item, price, quantity) {
@@ -73,6 +104,7 @@ function ThreeColumnTable(item, price, quantity) {
 
  // EXPORTS
 // Make the following things (e.g., sum, summaryDetail, etc.) available to the outside world
+// Note: these are functions; doesn't look like variables need this treatment
 module.exports = {
     sum,
     difference,

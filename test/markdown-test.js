@@ -37,12 +37,44 @@ QUnit.module('Markdown test(s)');
       );
    })
 
-   ThreeColumnTable(["Item", "Price", "Qty"], [
-      ["🍇 Grapes", "$2.99", 3],
-      ["🍐 Pears", "$4.15", 1],
-      ["🍋 Lemons", "$0.99", 2],
-      ["🍍 Pineapples | " , "$4.89 | " , 6]
-    ]);
+   // To test: each of these will be returned as an array: Items[], Prices[], Quantity[]
+
+   QUnit.test('3 Column Table', assert => {
+
+      // breakdown into 3 arrays
+      // TO DO: pass headers to function from here. i.e., ["Item", "Price", "Qty"]
+      var names = ['🍇 Grapes', '🍐 Pears', '🍋 Lemons']; // item names into an array
+      var prices = ['$2.99', '$4.15', '$0.99']; // prices into an array
+      var quantities = ['3', '1', '2']; // prices into an array
+
+      var allTheThings = [ names, prices, quantities ]; // put all other arrays into this one
+ 
+       // write our test & print markdown string
+      assert.equal(ThreeColumnTable( names, prices, quantities ), // note: 2 params getting passed in
+      "| Item | Price | Qty ||---|---|---|🍇 Grapes | ,$2.99 | ,3 |🍐 Pears | ,$4.15 | ,1 |🍋 Lemons | ,$0.99 | ,2 |", 
+      'Make sure your 3 Column Table data: Item, Price and Quantity match expected output.'
+      );
+  
+
+   })
+
+// 10/27
+ /*
+   QUnit.test('3 Column Table', assert => {
+      // write our test & print markdown string
+      var headers = ["Item", "Price", "Qty"]; // this in 1 dimensional / list; break up into steps, get col and go down the rows...
+      var values = [ // this is 2 dimensional / a table
+         ["🍇 Grapes", "$2.99", 3], // commas are between values (when coming after ], they sep the arrays)
+         ["🍐 Pears", "$4.15", 1],
+         ["🍋 Lemons", "$0.99", 2],
+         ["🍍 Pineapples" , "$4.89" , 6]
+       ];
+      assert.equal(ThreeColumnTable( headers, values ), // note: 2 params getting passed in
+      "| Item | Price | Qty ||---|---|---|🍇 Grapes | ,$2.99 | ,3 |🍐 Pears | ,$4.15 | ,1 |🍋 Lemons | ,$0.99 | ,2 |", 
+      'Make sure your 3 Column Table data: Item, Price and Quantity match expected output.'
+      );
+   })
+   */
 
    /*
    QUnit.test('3 Column Table', assert => {
