@@ -1,6 +1,6 @@
 //// Set constant variables
 // Include the calculator.js file, which contains functions and exports their returns / results
-const { sum, difference, quotient, product, summaryDetail, descriptionList, ThreeColumnTable } = require("../markdown");
+const { sum, difference, quotient, product, summaryDetail, descriptionList, threeColumnTable } = require("../markdown");
 
 //// These tests use Quinit and its modules to verify certain conditions then print details about passing / failing
 
@@ -48,17 +48,16 @@ QUnit.module('Markdown test(s)');
       var quantities = ['3', '1', '2']; // prices into an array
 
       var allTheThings = [ names, prices, quantities ]; // put all other arrays into this one
- 
+
        // write our test & print markdown string
-      assert.equal(ThreeColumnTable( names, prices, quantities ), // note: 2 params getting passed in
-      "| Item | Price | Qty ||---|---|---|🍇 Grapes | ,$2.99 | ,3 |🍐 Pears | ,$4.15 | ,1 |🍋 Lemons | ,$0.99 | ,2 |", 
+      assert.equal(threeColumnTable( names, prices, quantities ), // note: 3 params getting passed in; they are all arrays
+      "| Item | Price | Qty ||---|---|---|  🍇 Grapes | $2.99 | 3 |🍐 Pears | $4.15 | 1 |🍋 Lemons | $0.99 | 2 |", 
       'Make sure your 3 Column Table data: Item, Price and Quantity match expected output.'
       );
-  
 
    })
 
-// 10/27
+// 10/26
  /*
    QUnit.test('3 Column Table', assert => {
       // write our test & print markdown string
