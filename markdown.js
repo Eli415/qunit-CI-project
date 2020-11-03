@@ -38,30 +38,26 @@ function summaryDetail(a, b) {
 
 
 function ThreeColumnTable( allTheThings ) { // function takes an array that contains 3 arrays. It's all set up and called from markdown-test.js
-    var str2 = '| Item Name | Price | Quantity |'; // TO DO: set up as variables / an array, as well
+    var str2 = '| Item | Price | Qty |'; // TO DO: set up as variables / an array, as well
     str2 += '|---|---|---|'; 
-    
-    // for each allTheThings array
 
-    // Version A
-    /*
+    // 1. Option 1
+
+
     for (var i = 0; i < allTheThings.length; i++) { // loop through parent array (3 items)
-        var allTheThings = allTheThings = allTheThings[i]; // TO DO
-​
-        console.log(`allTheThings ${i}`);
-​
-            for (let j = 0; j < allTheThings.length; j++) { // loop through each array (inside parent array)
-                console.log(`item ${allTheThings[j]}`);
+        // var allTheThings = allTheThings = allTheThings[i]; // set AllTheThings to the specific index as it's being looped through
+            let oneThing = allTheThings[i];
+            for ( var j = 0; j < oneThing.length; j++ ){
+                console.log(oneThing[j])
             }
-​
         }
-    */
 
-    // Version B
     /*
     allTheThings.forEach(function(allTheThings, i) { // loop through parent array
+        var allTheThings = allTheThings = allTheThings[i]; // set AllTheThings to the specific index as it's being looped through; ADDED THIS
         allTheThings.forEach(function(names, j) {
-            console.log(`allTheThings:${i} - ${names}`);
+            //console.log(`allTheThings:${i} - ${names}`);
+            str2 += (`allTheThings:${i} - ${names}`); 
         })
     });
     */
