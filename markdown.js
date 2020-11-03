@@ -36,36 +36,17 @@ function summaryDetail(a, b) {
         4. mismatch in headers v. rows (what if someone added a header or not enough cols / items)
  */
 
+function threeColumnTable( names, prices, qty ) { // function takes 3 params, which are each arrays
 
-function ThreeColumnTable( allTheThings ) { // function takes an array that contains 3 arrays. It's all set up and called from markdown-test.js
-    var str2 = '| Item | Price | Qty |'; // TO DO: set up as variables / an array, as well
-    str2 += '|---|---|---|'; 
+      let col3 = names.reduce((acc, name, index) => { // this is a method that takes a value that can be an array (or nested array); https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+        acc += `${name} | ${prices[index]} | ${qty[index]} |`;
+        return acc;
+      }, ' ');
 
-    // 1. Option 1
-
-
-    for (var i = 0; i < allTheThings.length; i++) { // loop through parent array (3 items)
-        // var allTheThings = allTheThings = allTheThings[i]; // set AllTheThings to the specific index as it's being looped through
-            let oneThing = allTheThings[i];
-            for ( var j = 0; j < oneThing.length; j++ ){
-                console.log(oneThing[j])
-            }
-        }
-
-    /*
-    allTheThings.forEach(function(allTheThings, i) { // loop through parent array
-        var allTheThings = allTheThings = allTheThings[i]; // set AllTheThings to the specific index as it's being looped through; ADDED THIS
-        allTheThings.forEach(function(names, j) {
-            //console.log(`allTheThings:${i} - ${names}`);
-            str2 += (`allTheThings:${i} - ${names}`); 
-        })
-    });
-    */
-      return str2; //return allTheThings data;
+      return `| Item | Price | Qty ||---|---|---| ${ col3 }`;
  };
 
-
-// 10/27
+// 10/26
 /*
  function ThreeColumnTable(items, prices, qty) { // function takes 3 arrays. These are set up in markdown-test.js
     var str2 = '| Item | Price | Quantity |';
@@ -108,5 +89,5 @@ module.exports = {
     quotient,
     summaryDetail,
     descriptionList,
-    ThreeColumnTable
+    threeColumnTable
 }; 
